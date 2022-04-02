@@ -266,7 +266,6 @@ def printf():
     global Field_names
     print(Field_names)
 
-
 def Fields_operation_screen_create():
 
     
@@ -283,7 +282,7 @@ def Fields_operation_screen_create():
         Main_screen()
 
 
-    l1 = Label(root1,text="Field Name",width=20,font =("arial",10,"bold") )
+    l1 = Label(root1,text="Field  Operation Name",width=20,font =("arial",10,"bold") )
     l1.place(x = 10,y=100)
 
     entrylist1 = Entry(root1,textvar = var)
@@ -315,10 +314,10 @@ def Field_operation_screen_update():
         Update_Field_operation_Name(y,x)
         Main_screen()
 
-    l1 = Label(root2,text="Field Name",width=20,font =("arial",10,"bold") )
+    l1 = Label(root2,text="Field Operation Name",width=20,font =("arial",10,"bold") )
     l1.place(x = 10,y=100)
 
-    l2 = Label(root2,text="New Field Name",width=30,font =("arial",10,"bold") )
+    l2 = Label(root2,text="New Field Operation Name",width=35,font =("arial",10,"bold") )
     l2.place(x = 10,y=200)
 
     dropdown = OptionMenu(root2, var, *Field_operation_name )
@@ -347,7 +346,7 @@ def Field_operation_screen_delete():
         root3.destroy()
         Main_screen()
 
-    l1 = Label(root3,text="Field Name",width=20,font =("arial",10,"bold") )
+    l1 = Label(root3,text="Field Operation Name",width=35,font =("arial",10,"bold") )
     l1.place(x = 10,y=100)
 
     dropdown = OptionMenu(root3, var, *Field_operation_name )
@@ -373,7 +372,7 @@ def Field_operation_screen_restore():
         root3.destroy()
         Main_screen()
 
-    l1 = Label(root3,text="Field Name",width=20,font =("arial",10,"bold") )
+    l1 = Label(root3,text="Field Operation Name",width=20,font =("arial",10,"bold") )
     l1.place(x = 10,y=100)
 
     dropdown = OptionMenu(root3, var, *Field_operation_deleted )
@@ -531,14 +530,12 @@ def Update_Field_Name(Odd_name, new_name):
 
     for i in range(len(Field_names)):
         if (Field_names[i] == Odd_name):
-            print("True")
             Field_names[i] = new_name
 
     if(Odd_name in Field_Field_operation_link):
         Field_Field_operation_link[new_name] = Field_Field_operation_link.pop(Odd_name)
     
 
-    print(Field_names)
     
 def Update_Field_operation_Name(Odd_name,new_name):
 
